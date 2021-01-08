@@ -117,4 +117,34 @@
 - 삽입과 삭제가 빈번할 때
 
 
-## 코딩테스트 코드 정리
+## 코딩테스트 코드 정
+
+## Java에서 자주 사용되는 클래스의 메소드 기능 정리
+
+### String
+
+- length(): 문자열의 길이
+- substring(int 시작점): 시작점부터 끝까지 문자 자르기
+- substring(int 시작점, int 끝점): 시작점부터 끝점사이에 있는 문자 자르기
+- charAt(int 위치): 문자열 중 특정 위치 문자 가지고오기
+- concat(String str): 기존 문자 뒤에 str 문자를 붙임
+- contain(CharSequence s): s에 해당하는 문자가 존재하는지 true, false 값으로 표시함
+- split(String regex) regex에 해당하는 문자를 기준으로 문자를 나눈다
+- toLowerCase() / toUpperCase() : 소문자화 / 대문자화
+- compateToIgnoreCase(String str): 대소문자를 무시하고 해당하는 문자와 str 문자가 일치하는지 여부 일치하면 0, 불일치 -1
+- equals(String object): 문자열 비교
+- startsWith(String prefix): prefix에 해당하는 문자로 시작여부, boolean 타입
+- endsWith(String suffix): suffix에 해당하는 문자로 종료여부, boolean 타입
+- replace(char 이전문자, char 바꿀문자): 문자 교체
+
+### StringBuilder
+
+- length() : 문자열의 길이
+- capacity() : 문자열의 길이 + 16자리
+- append(String 새로운 문자) : 기준 문자 뒤에 새로운 문자를 더한다.
+- insert(int 들어갈 위치, String 들어갈 문자) : 들어갈 위치에 들어갈 문자를 넣는다.
+- replace(int 시작점, int 끝점, String 대체할 문자): 시작점부터 끝점사이에 있는 문자를 대체할 문자로 교체한다
+- delete(int 시작점, int 끝점): 시작점부터 끝점 사이에 있는 문자를 제거한다
+- reverse(): 현재 문자를 역순으로 한다.
+- toString(): 문자열화 시킨다
+  
