@@ -4,7 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * 숫자로 구성된 배열이 주어졌을 때 그 배열에 중복된 숫자가 있는지 확인하는 함수를 작성하라. 중복된 숫자가 있다면 true 없다면 false
+ * 주어진 문자열을 거꾸로 뒤집은 문자열을 만드는 함수를 작성하라
  */
 public class Solution {
     public char[] solution(char[] chars){
@@ -39,6 +39,7 @@ public class Solution {
         StringBuilder의 reverse()의 시간 복잡도는 O(n)이다
         시간복잡도 O(n)
         공간복잡도 O(n)
+        return new StringBuilder(String.valueOf(chars)).reverse().toString().toCharArray();
          */
 
         return new StringBuilder(String.valueOf(chars)).reverse().toString().toCharArray();

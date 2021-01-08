@@ -1,41 +1,34 @@
-# 배열 퀴즈 1
+# 배열 퀴즈 2
 주어진 문자열을 거꾸로 뒤집은 문자열을 만드는 함수를 작성하라
 
 ```
-솔루션 1. 전체 데이터 순회를 하여 중복된 숫자가 나오면 true를 return 한다.
-        시간복잡도 O(n^2)
+솔루션 1. for문을 돌리고 출력되는 값을 끝에서 부터 출력하도록 하는 방법
+        시간복잡도 O(n)
+        공간복잡도 O(n)
+        char[] charList = new char[chars.length];
+        for (int i = 0; i < chars.length; i++ ){
+            charList[i] = chars[chars.length-1-i];
+        }
+
+        return charList;
+```
+
+```
+솔루션 2. 주어진 문자열의 가운데 문자는 건들이지 않고, 임시 변수를 이용하여 양쪽 끝에서부터 자리교환 하는 방법
+        시간복잡도 O(n)
         공간복잡도 O(1)
-
-        for (int i =0; i < arrays.length; i++){
-            for (int j = i+1; j < arrays.length; j++){
-             if (arrays[i] == arrays[j]) return true;
-            }
+        for (int i = 0; i < chars.length/2; i++ ){
+            char temp = chars[i];
+            chars[i] = chars[chars.length-1-i];
+            chars[chars.length-1-i] = temp;
         }
-        return false;
+        return chars;
 ```
 
 ```
-솔루션 2. 전체 데이터를 정렬하고 나서 중복데이터가 있는지 체크함
-        Arrays.sort(arrays) 로직의 시간복잡도가 O(NlogN), 공간복잡도가 O(logN)
-        시간복잡도 O(NlogN)
-        공간복잡도 O(logN)
-        Arrays.sort(arrays);
-        for (int i  =0; i < arrays.length-1; i++){
-            if (arrays[i] == arrays[i+1]) return true;
-        }
-        return false;
-```
-
-```
-솔루션 3. 자료구조 Set을 사용하는 방법
-    Set의 contains의 시간복잡도는 O(1)이다.
-    시간복잡도 O(1)
-    공간복잡도 O(N)
-
-    Set<Integer> set = new HashSet<Integer>();
-    for (int i = 0; i < arrays.length; i++){
-        if (set.contains(arrays[i])) return true;
-        else set.add(arrays[i]);
-    }
-    return false;
+솔루션 3. StringBuilder를 이용한 방법
+        StringBuilder의 reverse()의 시간 복잡도는 O(n)이다
+        시간복잡도 O(n)
+        공간복잡도 O(n)
+        return new StringBuilder(String.valueOf(chars)).reverse().toString().toCharArray();
 ```
