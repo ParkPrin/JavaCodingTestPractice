@@ -13,6 +13,10 @@ public class LinkedNode {
         return next;
     }
 
+    public void setNext(LinkedNode next) {
+        this.next = next;
+    }
+
     public LinkedNode(int number) {
         this.number = number;
     }

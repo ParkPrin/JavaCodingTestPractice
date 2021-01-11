@@ -13,6 +13,14 @@ public class LinkedList {
         return tail;
     }
 
+    public void setHead(LinkedNode head) {
+        this.head = head;
+    }
+
+    public void setTail(LinkedNode tail) {
+        this.tail = tail;
+    }
+
     public static void main(String[] args) {
         LinkedList list = new LinkedList();
         list.add(new LinkedNode(1));
