@@ -147,4 +147,67 @@
 - delete(int 시작점, int 끝점): 시작점부터 끝점 사이에 있는 문자를 제거한다
 - reverse(): 현재 문자를 역순으로 한다.
 - toString(): 문자열화 시킨다
+
+## 정렬동작 구조와 성능
+### 선택 정렬
+가장 앞자리부터 찾아서 정렬하는 방식
+시간복잡도: O(n^2)
+공간복잡도: O(1)
+
+### 삽입 정렬
+정렬 범위를 1칸씩 확장해나가면서 새롭게 정렬 범위에 들어온 값을 기존 값들과 비교하여 알맞은 자리에 꼽아주는 알고리즘
+
+```
+public class InsertionSort {
+    public static void main(String[] args) {
+        int [] arr = {10, 2, 6, 4, 3, 7, 5};
+        
+        for (int i = 1; i < arr.length; i++) {
+            int standard = arr[i];  // 기준
+            int aux = i - 1;   // 비교할 대상
+            
+            while (aux >= 0 && standard < arr[aux]) {
+                arr[aux + 1] = arr[aux];   // 비교대상이 큰 경우 오른쪽으로 밀어냄
+                aux--;
+            }
+            arr[aux + 1] = standard;  // 기준값 저장
+        }
+        printArr(arr);
+    }
+    
+    public static void printArr(int[] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + " ");
+        }
+    }
+}
+```
+
+시간복잡도: O(n^2)
+공간복잡도: O(1)
+
+### 버블정렬
+정렬 대상의 n번째 인덱스와 n+1번째 인덱스를 비교하여 큰값을 뒤로 보내는 방법
+```
+public static void main(String[] args) {
+        int[] a = {254,3,213,64,75,56,4,324,65,78,9,5,76,3410,8,342,76};
+        int b;
+        for(int i = 0 ; i < a.length ; i ++) {
+            for(int j = 0 ; j < a.length -i -1 ; j ++) {
+                if(a[j]>a[j+1]) {
+                    b = a[j];
+                    a[j] = a[j+1];
+                    a[j+1] = b;
+                }
+            }
+        }
+
+        for(int i = 0 ; i < a.length ; i ++) {
+            System.out.print(a[i] + " ");
+        }
+    }
+```
+시간복잡도: O(n^2)
+공간복잡도: O(1)
+
   
