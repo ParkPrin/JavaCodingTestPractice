@@ -143,6 +143,9 @@
 데이터 삽입과 삭제가 한쪽 끝에서 이루어지는 순서가 있는 특별한 형태의 리스트
 Last In First Out(LIFO)
 
+### Java 구현체
+Stack: 동기화 기능이 내장되어 있어서 Deque에 비해 성능이 떨어질 수 있음
+
 #### 특징 & 시간복잡도
 
 - Push: Stack에 집어넣는 행위: O(1)
@@ -169,6 +172,64 @@ Last In First Out(LIFO)
 
 ---
 
+### Queue
+
+#### Java 구현체: Deque
+말 그대로 큐의 양쪽 끝에서 삽입과 삭제가 모두 발생할 수 있는 큐
+=> 사용용도에 따라서 Queue와 Stack이 될 수 있음
+
+- 추가하기
+```
+add: 마지막에 Element를 삽입
+addFirst: 첫 번째에 Element를 삽입
+addLast: 마지막에 Element를 삽입
+
+put : add와 동일하게 작동
+put(E e)
+putFirst(E e)
+putLast(E e)
+
+- offer : add와 동일하게 작동
+offer(E e)
+offerFirst(E e)
+offerLast(E e)
+
+- push : Deque의 앞 부분에 Element를 삽입.
+push(E e)
+
+```
+
+- 값 추출 및 제거하기
+```
+- poll : Deque의 제일 앞 Element를 return 받음. Element를 제거.
+Queue에서 Element를 받아오는 과정이라고 생각하면 된다.
+
+poll()
+pollFirst()
+pollLast()
+
+- pop : Deque의 제일 앞 Element를 return 받음. Element를 제거.
+Stack에서 Element를 받아오는 과정이라고 생각하면 된다.
+
+pop()
+
+```
+
+- 조회 & 체크
+
+```
+- peek : Deque의 제일 앞 Element를 return 받음. Element를 제거하지 않음.
+
+peek
+peekFirst
+peekLast
+
+- get : First, Last에 있는 Element를 return 받음. Element를 제거하지 않음.
+
+getFirst
+getLast
+
+```
 
 
 ## 코딩테스트 코드 정리
