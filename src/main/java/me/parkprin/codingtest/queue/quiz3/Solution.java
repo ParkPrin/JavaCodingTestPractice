@@ -14,11 +14,12 @@ class Solution {
 
      */
     public static void main(String[] args) {
-        Node node  = new Node(100)
+        Node node  = new Node(9)
                 .setLeft(new Node(2).setLeft(new Node(1)).setRight(new Node(5)))
                 .setRight(new Node(3).setLeft(new Node(4)).setRight(new Node(9)));
         BFSLogic bfsLogic = new BFSLogic(node);
         System.out.println(bfsLogic.maxSum());
+        bfsLogic.ldr1(node);
     }
 
 

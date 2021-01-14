@@ -10,6 +10,14 @@ public class BFSLogic {
         root = node;
     }
 
+    public void ldr1(Node root){
+        if (root != null) {
+            ldr1(root.getLeft());
+            System.out.println(root.getValue());
+            ldr1(root.getRight());
+        }
+    }
+
     public int maxSum(){
         Queue<Node> queue = new LinkedList<Node>();
         int result = 0;
