@@ -7,6 +7,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+
+/*
+linkedlist의 뒤에서 K번째 수를 찾는 방법
+ */
 public class Solution {
     public static void main(String[] args) {
         LinkedList list = new LinkedList();
