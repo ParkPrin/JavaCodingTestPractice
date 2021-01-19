@@ -23,7 +23,7 @@ class Solution {
      따라서, 수열의 i 번째 수부터 j 번째 수까지의 합이 S가 되도록 하는 (i, j) 쌍은 (1, 3), (2, 4)로 두 개가 있습니다.
      */
     public static void main(String[] args) {
-        int[] array = new int[]{1,1,1,1};
+        int[] array = new int[]{1,3,1,1};
         System.out.println(new Solution().solution(array, 3));
     }
 
@@ -34,7 +34,8 @@ class Solution {
             int sum =0;
             if (A[index] == S) {
                 answer++;
-                break;
+                index++;
+                continue;
             }
             for (int i = index; i < A.length; i++){
                 if (A[i] >= S) break;

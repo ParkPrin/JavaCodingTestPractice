@@ -20,9 +20,9 @@ class Solution {
 
      */
     public static void main(String[] args) {
-        int[] v = {5, 3, 9, 13};
+        int[] v = {2, 5, 3, 9, 13};
 
-        boolean result = new Solution().solution(v, 9);
+        boolean result = new Solution().solution(v, 4);
         System.out.println(result);
     }
 
@@ -69,13 +69,18 @@ class Solution {
         시간복잡도: O(n)
          */
 
+        /*
+         [5, 3, 9, 13]	8	true
+         [5, 3, 9, 13]	7	false
+         */
+
         Set<Integer> set = new HashSet<Integer>();
         for (int each : arr){
             if (each < n) set.add(each);
         }
-        Iterator<Integer> mapKeysIterator = set.iterator();
-        while (mapKeysIterator.hasNext()){
-            int num = mapKeysIterator.next();
+        Iterator<Integer> setIterator = set.iterator();
+        while (setIterator.hasNext()){
+            int num = setIterator.next();
             if (set.contains(n-num)) return true;
         }
 
